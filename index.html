@@ -3,404 +3,141 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Marcos Velázquez | CV</title>
+<title>Junior Software Developer en Sevilla | Marcos Velázquez</title>
+<meta name="description" content="Junior Software Developer en Sevilla. Estudiante de Ingeniería Informática especializado en Java, React y desarrollo de software." />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+<!-- SEO JSON-LD -->
+<script type="application/ld+json" id="seo-json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Marcos Velázquez Carmona",
+  "jobTitle": "Junior Software Developer",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Sevilla",
+    "addressCountry": "ES"
+  },
+  "description": "Junior Software Developer en Sevilla, estudiante de Ingeniería Informática especializado en Java, React y desarrollo de software.",
+  "email": "mailto:itsmakodev@gmail.com",
+  "sameAs": [
+    "https://github.com/itsmakodev",
+    "https://twitter.com/itsmakodev"
+  ]
+}
+</script>
+
 <style>
 :root {
-  --bg: #090d1a;
-  --card: rgba(15, 20, 30, 0.95);
-  --primary: #38bdf8;
-  --accent: #f472b6;
-  --highlight: #a78bfa;
-  --text: #e5e7eb;
-  --muted: #94a3b8;
-  --transition: 0.3s;
+  --bg:#090d1a; --card:rgba(15,20,30,.95); --primary:#38bdf8;
+  --accent:#f472b6; --highlight:#a78bfa; --text:#e5e7eb; --muted:#94a3b8;
 }
-
-* { box-sizing: border-box; margin:0; padding:0; font-family: 'Inter', sans-serif; }
-body { background: var(--bg); color: var(--text); line-height: 1.6; scroll-behavior: smooth; min-height: 100vh; position: relative; }
-#particles-js { position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: -1; background: var(--bg); }
-
-.container { display: flex; max-width: 1200px; margin: auto; padding: 2rem 1rem; position: relative; z-index: 1; }
-nav {
-  min-width: 220px;
-  background: var(--card);
-  border-radius: 18px;
-  padding: 2rem 1rem;
-  margin-right: 2rem;
-  position: sticky;
-  top: 1.5rem;
-  box-shadow: 0 10px 22px rgba(0,0,0,0.5);
-}
-nav h2 { color: var(--primary); font-size: 1.3rem; margin-bottom: 1rem; }
-nav a { display: block; color: var(--text); padding: 0.5rem 0; text-decoration: none; border-radius: 8px; transition: background var(--transition); }
-nav a:hover { background: rgba(56,189,248,0.25); }
-main { flex: 1; }
-
-section { background: var(--card); border-radius: 20px; padding: 2rem; margin-bottom: 2rem; box-shadow: 0 10px 25px rgba(0,0,0,0.6); opacity: 0; transform: translateY(20px); transition: all var(--transition) ease-out; }
-section.visible { opacity: 1; transform: translateY(0); }
-
-h1 { font-size: 3rem; background: linear-gradient(90deg, var(--primary), var(--accent), var(--highlight)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.5rem; }
-h2 { color: var(--primary); font-size: 1.5rem; margin-bottom: 0.8rem; border-bottom: 2px solid var(--accent); display: inline-block; padding-bottom: 0.2rem; }
-p { margin: 0.5rem 0; color: var(--muted); }
-
-.profile-img { width: 150px; height: 150px; border-radius: 50%; border: 3px solid var(--primary); object-fit: cover; margin-bottom: 0.5rem; transition: box-shadow 0.4s, transform 0.4s; }
-.profile-img:hover { transform: scale(1.05); box-shadow: 0 0 15px 4px #38bdf8, 0 0 30px 6px #38bdf8 inset; border-color: #f472b6; }
-
-.projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-.project-card { background: rgba(15,20,30,0.9); border-radius: 15px; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.6); transition: transform var(--transition), box-shadow var(--transition); position: relative; }
-.project-card iframe { width: 100%; height: 160px; border: none; }
-.project-card div { padding: 1rem; }
-.project-card h3 { margin-bottom: 0.4rem; color: var(--accent); }
-.project-card a { color: var(--primary); text-decoration: none; }
-.project-card:hover { transform: scale(1.05); box-shadow: 0 18px 40px rgba(0,0,0,0.7); }
-
-.project-card .extra-info {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: #00ffff; 
-  color: #0f172a; 
-  padding: 0.8rem 1rem;
-  font-size: 0.85rem;
-  font-weight: 500;
-  opacity: 0;
-  transform: translateY(100%);
-  transition: all 0.3s ease;
-  border-top: 1px solid rgba(0,0,0,0.2);
-}
-.project-card:hover .extra-info { opacity: 1; transform: translateY(0); }
-
-.badge { display: inline-block; background: rgba(56,189,248,0.15); color: var(--primary); padding: 0.4rem 0.8rem; border-radius: 999px; font-size: 0.85rem; margin: 0.2rem; transition: transform 0.2s, background 0.2s; cursor: default; }
-.badge:hover { transform: scale(1.1); background: rgba(56,189,248,0.3); }
-
-.console-placeholder {
-  padding: 1rem;
-  font-family: monospace;
-  color: #00ffff;
-  background: #020617;
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  white-space: pre;
-  overflow-x: auto;
-}
-
-.software-project-card h3 {
-  color: #38bdf8;
-  margin: 0.5rem 1rem 0 1rem;
-}
-
-.software-project-card .extra-info {
-  padding: 0.5rem 1rem;
-  font-size: 0.8rem;
-  color: #94a3b8;
-}
-
-@keyframes blink { 0%,50%,100%{opacity:1;}25%,75%{opacity:0;} }
-
-footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.9rem; padding: 1rem; border-top: 1px solid rgba(56,189,248,0.2); }
-
-/* Redes sociales derecha */
-.socials {
-  position: fixed;
-  right: 1.5rem;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  z-index: 20;
-}
-.social-icon {
-  width: 30px;
-  height: 30px;
-  filter: invert(100%);
-  transition: transform 0.3s, filter 0.3s;
-}
-.social-icon:hover {
-  transform: scale(1.2);
-  filter: invert(50%) sepia(100%) saturate(300%) hue-rotate(170deg);
-}
-.social-link { position: relative; display: inline-block; }
-
-.tooltip {
-  position: absolute;
-  right: 120%;
-  top: 50%;
-  transform: translateY(-50%);
-  background: var(--card);
-  color: var(--text);
-  padding: 0.3rem 0.6rem;
-  border-radius: 6px;
-  font-size: 0.8rem;
-  white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s, transform 0.3s;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-}
-
-.social-link:hover .tooltip {
-  opacity: 1;
-  transform: translateY(-50%) translateX(-5px);
-}
-
-
-/* Botón Ver en vivo */
-.live-link {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  display: inline-block;
-  padding: 0.4rem 0.8rem;
-  background: var(--primary);
-  color: #0f172a;
-  font-weight: 700;
-  border-radius: 8px;
-  text-decoration: none;
-  z-index: 10;
-  font-family: 'Inter', sans-serif;
-  transition: transform 0.2s, background 0.2s, box-shadow 0.3s;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-}
-.live-link:hover {
-  background: #22caff;
-  transform: scale(1.05);
-  box-shadow: 0 0 20px #22caff, inset 0 0 5px #0f172a;
-}
-
-@media(max-width: 900px){ 
-  .container { flex-direction: column; } 
-  nav { margin-right: 0; margin-bottom: 2rem; width: 100%; display: flex; justify-content: space-around; border-radius: 15px; } 
-}
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Inter',sans-serif}
+body{background:var(--bg);color:var(--text);line-height:1.6}
+#particles-js{position:fixed;inset:0;z-index:-1}
+.container{display:flex;max-width:1200px;margin:auto;padding:2rem 1rem}
+nav{min-width:220px;background:var(--card);border-radius:18px;padding:2rem 1rem;margin-right:2rem}
+nav a{display:block;color:var(--text);padding:.5rem;text-decoration:none}
+main{flex:1}
+section{background:var(--card);border-radius:20px;padding:2rem;margin-bottom:2rem}
+h1{font-size:3rem;background:linear-gradient(90deg,var(--primary),var(--accent),var(--highlight));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+h2{color:var(--primary);border-bottom:2px solid var(--accent);display:inline-block;margin-bottom:.8rem}
+.lang-switch{position:fixed;top:1rem;right:1rem;z-index:50}
+.lang-switch button{background:var(--card);color:var(--text);border:none;padding:.4rem .7rem;border-radius:8px;cursor:pointer;margin-left:.3rem}
+.lang-switch button.active{background:var(--primary);color:#0f172a;font-weight:700}
 </style>
 </head>
 <body>
 <div id="particles-js"></div>
 
-<!-- Redes sociales derecha -->
-<div class="socials">
-  <a href="https://twitter.com/itsmakodev" target="_blank" class="social-link">
-    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/x.svg" alt="X" class="social-icon">
-    <span class="tooltip">@itsmakodev</span>
-  </a>
-  <a href="https://github.com/itsmakodev" target="_blank" class="social-link">
-    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" alt="GitHub" class="social-icon">
-    <span class="tooltip">@itsmakodev</span>
-  </a>
-  <a href="https://discord.com/users/itsmakovgc" target="_blank" class="social-link">
-    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/discord.svg" alt="Discord" class="social-icon">
-    <span class="tooltip">@itsmakovgc</span>
-  </a>
+<!-- Language Switch -->
+<div class="lang-switch">
+  <button id="btn-es" class="active">🇪🇸 ES</button>
+  <button id="btn-en">🇬🇧 EN</button>
 </div>
 
 <div class="container">
-  <nav>
-    <h2>Menú</h2>
-    <a href="#perfil">Perfil</a>
-    <a href="#formacion">Formación</a>
-    <a href="#proyectos">Proyectos</a>
-    <a href="#habilidades">Habilidades</a>
-    <a href="#idiomas">Idiomas</a>
-    <a href="#competencias">Competencias</a>
-  </nav>
+<nav>
+  <a href="#perfil" data-i18n="menu.profile">Perfil</a>
+  <a href="#formacion" data-i18n="menu.education">Formación</a>
+  <a href="#proyectos" data-i18n="menu.projects">Proyectos</a>
+  <a href="#habilidades" data-i18n="menu.skills">Habilidades</a>
+</nav>
 
-  <main>
-    <section id="perfil">
-      <img class="profile-img" src="https://i.imgur.com/GhXGSBk.jpg" alt="Foto de Marcos">
-      <h1>Marcos Velázquez Carmona</h1>
-      <p class="tagline">Estudiante de Ingeniería Informática · Perfil Junior</p>
-      <p>📍 Sevilla · ✉️ itsmakodev@gmail.com</p>
-      <p>
-        Soy un estudiante de Ingeniería Informática con sólida formación en desarrollo de software, estructuras de datos y algoritmos. Me adapto rápido a nuevos entornos, trabajo bien en equipo y aporto soluciones eficientes y modulares, tanto en proyectos web como en aplicaciones de escritorio o scripts de automatización.
-      </p>
-    </section>      
+<main>
+<section id="perfil">
+  <h1>Marcos Velázquez Carmona</h1>
+  <p data-i18n="profile.subtitle">Junior Software Developer en Sevilla · Estudiante de Ingeniería Informática</p>
+  <p data-i18n="profile.text">
+    Estudiante de Ingeniería Informática con sólida formación en desarrollo de software, algoritmos y estructuras de datos.
+    Busco oportunidades junior o prácticas en Sevilla o remoto.
+  </p>
+</section>
 
-    <section id="formacion">
-      <h2>Formación</h2>
-      <p><strong>Ingeniería Informática en Sistemas de Información</strong> · Universidad Pablo de Olavide (UPO)</p>
-      <ul>
-        <li>Programación en Java, C y Python</li>
-        <li>Estructuras de datos, algoritmos y lógica aplicada</li>
-        <li>Sistemas digitales y arquitectura de computadores</li>
-      </ul>
-    </section>
+<section id="formacion">
+  <h2 data-i18n="education.title">Formación</h2>
+  <p data-i18n="education.text">Ingeniería Informática en Sistemas de Información · Universidad Pablo de Olavide</p>
+</section>
 
-    <section id="proyectos">
-      <h2>Proyectos Destacados</h2>
-      <p>Incluye trabajos web y otros desarrollos de software académicos y personales.</p>
+<section id="proyectos">
+  <h2 data-i18n="projects.title">Proyectos</h2>
+  <p data-i18n="projects.text">Proyectos académicos y personales enfocados en desarrollo de software y web.</p>
+</section>
 
-      <!-- Proyectos Web -->
-      <div class="projects">
-        <div class="project-card">
-          <iframe src="https://tormentz.vercel.app/"></iframe>
-          <a href="https://tormentz.vercel.app/" target="_blank" class="live-link">Ver en vivo</a>
-          <div>
-            <h3>Tormentz</h3>
-            <p>Página web interactiva desplegada en Vercel.</p>
-            <div class="extra-info">
-              <strong>Tecnologías:</strong> JavaScript, React, CSS3<br>
-              <strong>Enfoque:</strong> Desarrollo modular, interactividad y animaciones.
-            </div>
-          </div>
-        </div>
+<section id="habilidades">
+  <h2 data-i18n="skills.title">Habilidades Técnicas</h2>
+  <p>Java · React · JavaScript · SQL · Git · Linux</p>
+</section>
 
-        <div class="project-card">
-          <iframe src="https://portfolio-mako-opal.vercel.app/"></iframe>
-          <a href="https://portfolio-mako-opal.vercel.app/" target="_blank" class="live-link">Ver en vivo</a>
-          <div>
-            <h3>Portfolio Mako</h3>
-            <p>Portfolio personal orientado a mostrar habilidades técnicas.</p>
-            <div class="extra-info">
-              <strong>Tecnologías:</strong> React, Tailwind CSS, JavaScript<br>
-              <strong>Enfoque:</strong> Presentación profesional de proyectos, habilidades y contacto.
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Otros Proyectos de Software -->
-      <h3 style="color:var(--accent); margin-top:1.5rem;">Otros Proyectos de Software</h3>
-      <div class="projects">
-        <div class="project-card">
-          <div class="console-placeholder" data-text="Mini Sistema en Java > _"></div>
-          <div>
-            <h3>Mini Sistema en Java</h3>
-            <p>Aplicación de consola con gestión de datos y lógica modular.</p>
-            <div class="extra-info">
-              <strong>Tecnologías:</strong> Java, OOP, Modular Design
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="console-placeholder" data-text="Prácticas en C > _"></div>
-          <div>
-            <h3>Prácticas en C</h3>
-            <p>Resolución de problemas algorítmicos usando estructuras básicas.</p>
-            <div class="extra-info">
-              <strong>Tecnologías:</strong> C, Funciones, Algoritmos
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="console-placeholder" data-text="Ejercicios en Python > _"></div>
-          <div>
-            <h3>Ejercicios en Python</h3>
-            <p>Scripts de automatización y lógica computacional.</p>
-            <div class="extra-info">
-              <strong>Tecnologías:</strong> Python, Scripts, Automatización
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="console-placeholder" data-text="Diseño de bases de Datos > _"></div>
-          <div>
-            <h3>Diseño de bases de datos</h3>
-            <p>Aplicación desarrollada como parte de mis prácticas académicas.</p>
-            <div class="extra-info">
-              <strong>Tecnologías:</strong> SQL, Oracle, MySQL
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="habilidades">
-      <h2>Habilidades Técnicas</h2>
-      <span class="badge">Java</span>
-      <span class="badge">C</span>
-      <span class="badge">Python</span>
-      <span class="badge">Git</span>
-      <span class="badge">Algoritmos</span>
-      <span class="badge">POO</span>
-      <span class="badge">Linux</span>
-      <span class="badge">HTML/CSS</span>
-      <span class="badge">React</span>
-      <span class="badge">Tailwind CSS</span>
-      <span class="badge">SQL</span>
-      <span class="badge">Windows</span>
-      <span class="badge">Matlab</span>
-      <span class="badge">Oracle</span>
-      <span class="badge">MySQL</span>
-    </section>
-
-    <section id="idiomas">
-      <h2>Idiomas</h2>
-      <ul>
-        <li>Español – Nativo</li>
-        <li>Inglés – B2</li>
-        <li>Francés – A2</li>
-      </ul>
-    </section>
-
-    <section id="competencias">
-      <h2>Competencias</h2>
-      <ul>
-        <li>Resolución de problemas en entornos profesionales</li>
-        <li>Trabajo en equipo y colaboración multidisciplinaria</li>
-        <li>Aprendizaje rápido de nuevas tecnologías</li>
-        <li>Responsabilidad, organización y atención al detalle</li>
-      </ul>
-    </section>
-
-    <footer>
-      <p>CV web · Marcos Velázquez Carmona · Sevilla · itsmakodev@gmail.com · Enero 2026</p>
-    </footer>
-  </main>
+<footer>
+  <p>© 2026 Marcos Velázquez · Sevilla</p>
+</footer>
+</main>
 </div>
 
 <script>
-// Animación de secciones
-const sections = document.querySelectorAll('section');
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('visible'); });
-}, { threshold: 0.2 });
-sections.forEach(sec => observer.observe(sec));
+const i18n={
+ es:{
+  title:"Junior Software Developer en Sevilla | Marcos Velázquez",
+  description:"Junior Software Developer en Sevilla. Estudiante de Ingeniería Informática especializado en Java y React.",
+  menu:{profile:"Perfil",education:"Formación",projects:"Proyectos",skills:"Habilidades"},
+  profile:{subtitle:"Junior Software Developer en Sevilla · Estudiante de Ingeniería Informática",text:"Estudiante de Ingeniería Informática con sólida formación en desarrollo de software, algoritmos y estructuras de datos. Busco oportunidades junior o prácticas en Sevilla o remoto."},
+  education:{title:"Formación",text:"Ingeniería Informática en Sistemas de Información · Universidad Pablo de Olavide"},
+  projects:{title:"Proyectos",text:"Proyectos académicos y personales enfocados en desarrollo de software y web."},
+  skills:{title:"Habilidades Técnicas"}
+ },
+ en:{
+  title:"Junior Software Developer in Seville | Marcos Velázquez",
+  description:"Junior Software Developer in Seville. Computer Engineering student specialized in Java and React.",
+  menu:{profile:"Profile",education:"Education",projects:"Projects",skills:"Skills"},
+  profile:{subtitle:"Junior Software Developer in Seville · Computer Engineering Student",text:"Computer Engineering student with a strong background in software development, algorithms and data structures. Looking for junior or internship opportunities in Seville or remote."},
+  education:{title:"Education",text:"Computer Engineering (Information Systems) · Pablo de Olavide University"},
+  projects:{title:"Projects",text:"Academic and personal projects focused on software and web development."},
+  skills:{title:"Technical Skills"}
+ }
+};
 
-// Partículas
-particlesJS("particles-js", {
-  "particles": {
-    "number": {"value": 80, "density": {"enable": true,"value_area": 800}},
-    "color": {"value": "#38bdf8"},
-    "shape": {"type": "circle"},
-    "opacity": {"value": 0.5},
-    "size": {"value": 3},
-    "line_linked": {"enable": true,"distance": 120,"color": "#38bdf8","opacity":0.4,"width":1},
-    "move": {"enable": true,"speed": 2,"direction": "none","random": false,"straight": false,"out_mode": "out"}
-  },
-  "interactivity": {
-    "detect_on": "canvas",
-    "events": {"onhover":{"enable":true,"mode":"grab"},"onclick":{"enable":true,"mode":"push"},"resize":true},
-    "modes": {"grab":{"distance":140,"line_linked":{"opacity":0.7}},"push":{"particles_nb":4}}
-  },
-  "retina_detect": true
-});
+function setLang(lang){
+ document.documentElement.lang=lang;
+ document.title=i18n[lang].title;
+ document.querySelector('meta[name="description"]').content=i18n[lang].description;
+ document.querySelectorAll('[data-i18n]').forEach(el=>{
+   const keys=el.dataset.i18n.split('.');
+   let text=i18n[lang]; keys.forEach(k=>text=text[k]);
+   el.textContent=text;
+ });
+ document.getElementById('btn-es').classList.toggle('active',lang==='es');
+ document.getElementById('btn-en').classList.toggle('active',lang==='en');
+}
 
-// Animación typing consola
-document.querySelectorAll('.console-placeholder').forEach(el => {
-  const text = el.dataset.text;
-  let typingInterval;
+document.getElementById('btn-es').onclick=()=>setLang('es');
+document.getElementById('btn-en').onclick=()=>setLang('en');
 
-  function typeConsole() {
-    el.textContent = '';
-    let i = 0;
-    typingInterval = setInterval(() => {
-      if(i < text.length){
-        el.textContent += text[i];
-        i++;
-      } else { clearInterval(typingInterval); }
-    }, 80);
-  }
-
-  typeConsole();
-  el.closest('.project-card').addEventListener('mouseenter', typeConsole);
+particlesJS("particles-js",{
+ particles:{number:{value:80},color:{value:'#38bdf8'},line_linked:{enable:true,color:'#38bdf8'},move:{enable:true,speed:2}},
+ interactivity:{events:{onhover:{enable:true,mode:'grab'}}}
 });
 </script>
 </body>
