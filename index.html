@@ -103,7 +103,54 @@
       .container { flex-direction: column; }
       nav { margin-right: 0; margin-bottom: 2rem; width: 100%; display: flex; justify-content: space-around; border-radius: 15px; }
     }
-  </style>
+    .project-card {
+  background: rgba(15,20,30,0.9);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+
+.project-card iframe {
+  width: 100%;
+  height: 160px;
+  border: none;
+}
+
+.project-card div {
+  padding: 1rem;
+  transition: transform 0.3s;
+}
+
+.project-card h3 { margin-bottom: 0.4rem; color: var(--accent); }
+
+.project-card a { color: var(--primary); text-decoration: none; }
+
+.project-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.7);
+}
+
+.project-card .extra-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(56,189,248,0.15);
+  color: var(--text);
+  padding: 0.8rem 1rem;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.3s;
+  font-size: 0.85rem;
+}
+
+.project-card:hover .extra-info {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
 </head>
 <body>
   <div id="particles-js"></div>
@@ -148,19 +195,26 @@
               <h3>Tormentz</h3>
               <p>Juego web interactivo desplegado en Vercel.</p>
               <a href="https://tormentz.vercel.app/" target="_blank">Ver en vivo</a>
+              <div class="extra-info">
+                Desarrollado con JavaScript y React. Incluye animaciones, interactividad y lógica de juego modular.
+              </div>
             </div>
           </div>
+      
           <div class="project-card">
             <iframe src="https://portfolio-mako-opal.vercel.app/"></iframe>
             <div>
               <h3>Portfolio Mako</h3>
               <p>Mi portfolio personal tech.</p>
               <a href="https://portfolio-mako-opal.vercel.app/" target="_blank">Ver en vivo</a>
+              <div class="extra-info">
+                Creado con React y Tailwind CSS. Presenta mis proyectos, habilidades y contacto de manera interactiva.
+              </div>
             </div>
           </div>
         </div>
       </section>
-
+      
       <section id="habilidades">
         <h2>Habilidades Técnicas</h2>
         <span class="badge">Java</span>
