@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marcos Velázquez | CV</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: rgba(2,6,23,0.9);
+      --primary: #38bdf8;
+      --accent: #f472b6;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+    }
+
+    * { box-sizing: border-box; margin:0; padding:0; font-family: 'Inter', system-ui, sans-serif; }
+    body { background: linear-gradient(120deg, #020617, var(--bg)); color: var(--text); line-height: 1.6; }
+
+    .container { max-width: 1000px; margin: auto; padding: 2rem 1.5rem; }
+
+    /* HEADER */
+    header { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; margin-bottom: 3rem; text-align: center; }
+    header img { width: 120px; height: 120px; border-radius: 50%; border: 3px solid var(--primary); object-fit: cover; margin-bottom: 0.5rem; }
+    h1 { font-size: 3rem; background: linear-gradient(90deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .tagline { font-size: 1.1rem; color: var(--text); }
+    header p { color: var(--muted); margin: 0.2rem 0; }
+
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* SECCIONES */
+    section {
+      background: var(--card);
+      border-radius: 20px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    section:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,0.5); }
+
+    h2 { color: var(--primary); font-size: 1.5rem; margin-bottom: 0.8rem; border-bottom: 2px solid var(--accent); display: inline-block; padding-bottom: 0.2rem; }
+
+    p { margin: 0.5rem 0; color: var(--muted); }
+
+    ul { padding-left: 1.2rem; margin-top: 0.5rem; }
+    li { margin-bottom: 0.5rem; }
+
+    /* GRID HABILIDADES */
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+    .badge {
+      display: inline-block;
+      background: rgba(56,189,248,0.15);
+      color: var(--primary);
+      padding: 0.4rem 0.8rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      margin: 0.2rem;
+      transition: transform 0.2s, background 0.2s;
+      cursor: default;
+    }
+    .badge:hover { transform: scale(1.1); background: rgba(56,189,248,0.3); }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      color: var(--muted);
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      padding: 1rem;
+      border-top: 1px solid rgba(56,189,248,0.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <!-- Descomenta la línea de la foto si quieres usar una -->
+      <!-- <img src="tu-foto.jpg" alt="Marcos Velázquez"> -->
+      <h1>Marcos Velázquez Carmona</h1>
+      <p class="tagline">Estudiante de Ingeniería Informática en Sistemas de Información · Perfil Junior</p>
+      <p>📍 Sevilla, España · 📞 +34 674 837 401 · ✉️ itsmakodev@gmail.com</p>
+      <p>🌐 GitHub: <a href="#">github.com/itsmakodev</a></p>
+    </header>
+
+    <section>
+      <h2>Perfil</h2>
+      <p>Apasionado por la informática y el desarrollo de software. Me gusta aprender rápido, resolver problemas y crear soluciones prácticas que aporten valor desde el primer día.</p>
+    </section>
+
+    <section>
+      <h2>Formación</h2>
+      <p><strong>Ingeniería Informática en Sistemas de Información</strong> · Universidad Pablo de Olavide (UPO) · 2024 – Actualidad</p>
+      <ul>
+        <li>Programación en Java, C y Python</li>
+        <li>Estructuras de control, tipos de datos y algoritmos</li>
+        <li>Lógica matemática y matemática discreta aplicada</li>
+        <li>Arquitectura de computadores y sistemas digitales</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Proyectos Académicos</h2>
+      <ul>
+        <li><strong>Mini sistema en Java</strong> – Aplicación de consola con gestión de datos, validaciones y lógica modular.</li>
+        <li><strong>Prácticas en C</strong> – Resolución de problemas algorítmicos usando estructuras básicas.</li>
+        <li><strong>Scripts en Python</strong> – Automatización de tareas y resolución de ejercicios de lógica.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Habilidades Técnicas</h2>
+      <div class="grid">
+        <div>
+          <span class="badge">Java</span>
+          <span class="badge">C</span>
+          <span class="badge">Python</span>
+          <span class="badge">Git</span>
+        </div>
+        <div>
+          <span class="badge">Algoritmos</span>
+          <span class="badge">Estructuras de datos</span>
+          <span class="badge">POO</span>
+          <span class="badge">Linux</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Idiomas</h2>
+      <ul>
+        <li>Español – Nativo</li>
+        <li>Inglés – B2</li>
+        <li>Francés – A2</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Competencias</h2>
+      <ul>
+        <li>Resolución de problemas</li>
+        <li>Trabajo en equipo</li>
+        <li>Aprendizaje rápido</li>
+        <li>Responsabilidad y constancia</li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>CV web · Diseñado para perfiles junior · Última actualización 2026</p>
+    </footer>
+  </div>
+</body>
+</html>
