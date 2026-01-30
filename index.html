@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marcos Velázquez | CV</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #020617;
+      --primary: #38bdf8;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+    }
+
+    * {
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(120deg, #020617, #0f172a);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem 1.5rem;
+    }
+
+    header {
+      display: grid;
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      margin: 0;
+    }
+
+    h2 {
+      color: var(--primary);
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      margin: 0.3rem 0;
+      color: var(--muted);
+    }
+
+    .tagline {
+      font-size: 1.1rem;
+      color: var(--text);
+    }
+
+    section {
+      background: rgba(2, 6, 23, 0.85);
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(56,189,248,0.15);
+      color: var(--primary);
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      margin: 0.2rem;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      margin-top: 3rem;
+      font-size: 0.9rem;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Marcos Velázquez Carmona</h1>
+      <p class="tagline">Estudiante de Ingeniería Informática en Sistemas de Información · Perfil Junior</p>
+      <p>📍 Sevilla, España · 📞 +34 674 837 401 · ✉️ marcos.velazquez.dev@gmail.com</p>
+      <p>🌐 GitHub: <a href="#">github.com/tuusuario</a></p>
+    </header>
+
+    <section>
+      <h2>Perfil</h2>
+      <p>
+        Estudiante de Ingeniería Informática en Sistemas de Información con base sólida en programación y
+        pensamiento algorítmico. Interesado en desarrollo de software, sistemas de información y backend.
+        Motivado por aprender en entornos reales y aportar valor desde el primer día.
+      </p>
+    </section>
+
+    <section>
+      <h2>Formación</h2>
+      <p><strong>Ingeniería Informática en Sistemas de Información</strong></p>
+      <p>Universidad Pablo de Olavide (UPO) · 2024 – Actualidad</p>
+      <ul>
+        <li>Programación en Java, C y Python</li>
+        <li>Estructuras de control, tipos de datos y algoritmos</li>
+        <li>Lógica matemática y matemática discreta aplicada</li>
+        <li>Bases de arquitectura de computadores y sistemas digitales</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Proyectos Académicos</h2>
+      <ul>
+        <li><strong>Mini sistema en Java</strong> – Aplicación de consola con gestión de datos, validaciones y lógica modular.</li>
+        <li><strong>Prácticas en C</strong> – Resolución de problemas algorítmicos usando estructuras básicas.</li>
+        <li><strong>Ejercicios en Python</strong> – Scripts para automatización y lógica computacional.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Habilidades Técnicas</h2>
+      <div class="grid">
+        <div>
+          <span class="badge">Java</span>
+          <span class="badge">C</span>
+          <span class="badge">Python</span>
+          <span class="badge">Git</span>
+        </div>
+        <div>
+          <span class="badge">Algoritmos</span>
+          <span class="badge">Estructuras de datos</span>
+          <span class="badge">POO</span>
+          <span class="badge">Linux</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Idiomas</h2>
+      <ul>
+        <li>Español – Nativo</li>
+        <li>Inglés – B2</li>
+        <li>Francés – A2</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Competencias</h2>
+      <ul>
+        <li>Resolución de problemas</li>
+        <li>Trabajo en equipo</li>
+        <li>Aprendizaje rápido</li>
+        <li>Responsabilidad y constancia</li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>CV web · Diseñado para perfiles junior · Última actualización 2026</p>
+    </footer>
+  </div>
+</body>
+</html>
