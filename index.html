@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Marcos Velázquez | Portfolio</title>
+  <title>Marcos Velázquez | Portfolio Profesional</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <style>
@@ -19,28 +19,10 @@
     }
 
     * { box-sizing: border-box; margin:0; padding:0; font-family: 'Inter', sans-serif; }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      scroll-behavior: smooth;
-      min-height: 100vh;
-      position: relative;
-    }
-
-    #particles-js {
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      z-index: -1;
-      background: var(--bg);
-    }
+    body { background: var(--bg); color: var(--text); line-height: 1.6; scroll-behavior: smooth; min-height: 100vh; position: relative; }
+    #particles-js { position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: -1; background: var(--bg); }
 
     .container { display: flex; max-width: 1200px; margin: auto; padding: 2rem 1rem; position: relative; z-index: 1; }
-
     nav {
       min-width: 220px;
       background: var(--card);
@@ -54,126 +36,35 @@
     nav h2 { color: var(--primary); font-size: 1.3rem; margin-bottom: 1rem; }
     nav a { display: block; color: var(--text); padding: 0.5rem 0; text-decoration: none; border-radius: 8px; transition: background var(--transition); }
     nav a:hover { background: rgba(56,189,248,0.25); }
-
     main { flex: 1; }
 
-    section {
-      background: var(--card);
-      border-radius: 20px;
-      padding: 2rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.6);
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all var(--transition) ease-out;
-    }
+    section { background: var(--card); border-radius: 20px; padding: 2rem; margin-bottom: 2rem; box-shadow: 0 10px 25px rgba(0,0,0,0.6); opacity: 0; transform: translateY(20px); transition: all var(--transition) ease-out; }
     section.visible { opacity: 1; transform: translateY(0); }
 
     h1 { font-size: 3rem; background: linear-gradient(90deg, var(--primary), var(--accent), var(--highlight)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.5rem; }
     h2 { color: var(--primary); font-size: 1.5rem; margin-bottom: 0.8rem; border-bottom: 2px solid var(--accent); display: inline-block; padding-bottom: 0.2rem; }
-
     p { margin: 0.5rem 0; color: var(--muted); }
 
-    .profile-img { width: 150px; height: 150px; border-radius: 50%; border: 3px solid var(--primary); object-fit: cover; margin-bottom: 0.5rem; }
+    .profile-img { width: 150px; height: 150px; border-radius: 50%; border: 3px solid var(--primary); object-fit: cover; margin-bottom: 0.5rem; transition: box-shadow 0.4s, transform 0.4s; }
+    .profile-img:hover { transform: scale(1.05); box-shadow: 0 0 15px 4px #38bdf8, 0 0 30px 6px #38bdf8 inset; border-color: #f472b6; }
 
     .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-    .project-card {
-      background: rgba(15,20,30,0.9);
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.6);
-      transition: transform var(--transition), box-shadow var(--transition);
-    }
-    .project-card iframe {
-      width: 100%;
-      height: 160px;
-      border: none;
-    }
+    .project-card { background: rgba(15,20,30,0.9); border-radius: 15px; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.6); transition: transform var(--transition), box-shadow var(--transition); position: relative; }
+    .project-card iframe { width: 100%; height: 160px; border: none; }
     .project-card div { padding: 1rem; }
     .project-card h3 { margin-bottom: 0.4rem; color: var(--accent); }
     .project-card a { color: var(--primary); text-decoration: none; }
-    .project-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,0.7); }
+    .project-card:hover { transform: scale(1.05); box-shadow: 0 18px 40px rgba(0,0,0,0.7); }
+    .project-card .extra-info { position: absolute; bottom: 0; left: 0; right: 0; background: #00ffff; color: #0f172a; padding: 0.8rem 1rem; opacity: 0; transform: translateY(100%); transition: all 0.3s; font-size: 0.85rem; }
+    .project-card:hover .extra-info { opacity: 1; transform: translateY(0); }
 
     .badge { display: inline-block; background: rgba(56,189,248,0.15); color: var(--primary); padding: 0.4rem 0.8rem; border-radius: 999px; font-size: 0.85rem; margin: 0.2rem; transition: transform 0.2s, background 0.2s; cursor: default; }
     .badge:hover { transform: scale(1.1); background: rgba(56,189,248,0.3); }
 
     footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0.9rem; padding: 1rem; border-top: 1px solid rgba(56,189,248,0.2); }
 
-    @media(max-width: 900px){
-      .container { flex-direction: column; }
-      nav { margin-right: 0; margin-bottom: 2rem; width: 100%; display: flex; justify-content: space-around; border-radius: 15px; }
-    }
-    .project-card {
-  background: rgba(15,20,30,0.9);
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
-  transition: transform 0.3s, box-shadow 0.3s;
-  position: relative;
-}
-
-.project-card iframe {
-  width: 100%;
-  height: 160px;
-  border: none;
-}
-
-.project-card div {
-  padding: 1rem;
-  transition: transform 0.3s;
-}
-
-.project-card h3 { margin-bottom: 0.4rem; color: var(--accent); }
-
-.project-card a { color: var(--primary); text-decoration: none; }
-
-.project-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 18px 40px rgba(0,0,0,0.7);
-}
-
-.project-card .extra-info {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: #00ffff; /* Cian sólido y completamente opaco */
-  color: #0f172a; /* Color de texto oscuro para buen contraste */
-  padding: 0.8rem 1rem;
-  opacity: 0;
-  transform: translateY(100%);
-  transition: all 0.3s;
-  font-size: 0.85rem;
-}
-
-.project-card:hover .extra-info {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.project-card:hover .extra-info {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.profile-img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  border: 3px solid var(--primary);
-  object-fit: cover;
-  margin-bottom: 0.5rem;
-  transition: box-shadow 0.4s, transform 0.4s;
-}
-
-.profile-img:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 20px 5px #38bdf8, 0 0 40px 10px #38bdf8 inset;
-  border-color: #f472b6;
-}
-
-
-</style>
+    @media(max-width: 900px){ .container { flex-direction: column; } nav { margin-right: 0; margin-bottom: 2rem; width: 100%; display: flex; justify-content: space-around; border-radius: 15px; } }
+  </style>
 </head>
 <body>
   <div id="particles-js"></div>
@@ -186,7 +77,8 @@
       <a href="#habilidades">Habilidades</a>
       <a href="#idiomas">Idiomas</a>
       <a href="#competencias">Competencias</a>
-      <a href="https://twitter.com/tu_twitter" target="_blank">Twitter</a>
+      <a href="https://twitter.com/itsmakodev" target="_blank">Twitter</a>
+      <a href="https://github.com/itsmakodev" target="_blank">Github</a>
     </nav>
 
     <main>
@@ -195,8 +87,7 @@
         <h1>Marcos Velázquez Carmona</h1>
         <p class="tagline">Estudiante de Ingeniería Informática · Perfil Junior</p>
         <p>📍 Sevilla · 📞 +34 674 837 401 · ✉️ itsmakodev@gmail.com</p>
-        <p>🌐 GitHub: <a href="#">github.com/itsmakodev</a></p>
-        <p>Apasionado por la informática y el desarrollo web moderno.</p>
+        <p>Estudiante con sólida formación en desarrollo de software y sistemas de información, capaz de integrarse en equipos de trabajo y aportar soluciones eficientes en entornos profesionales.</p>
       </section>      
 
       <section id="formacion">
@@ -204,7 +95,7 @@
         <p><strong>Ingeniería Informática en Sistemas de Información</strong> · Universidad Pablo de Olavide (UPO)</p>
         <ul>
           <li>Programación en Java, C y Python</li>
-          <li>Estructuras de datos, algoritmos y lógica</li>
+          <li>Estructuras de datos, algoritmos y lógica aplicada</li>
           <li>Sistemas digitales y arquitectura de computadores</li>
         </ul>
       </section>
@@ -219,7 +110,7 @@
               <p>Juego web interactivo desplegado en Vercel.</p>
               <a href="https://tormentz.vercel.app/" target="_blank">Ver en vivo</a>
               <div class="extra-info">
-                Desarrollado con JavaScript y React. Incluye animaciones, interactividad y lógica de juego modular.
+                Desarrollo profesional con JavaScript y React. Incluye animaciones, interactividad y lógica de juego modular.
               </div>
             </div>
           </div>
@@ -228,10 +119,10 @@
             <iframe src="https://portfolio-mako-opal.vercel.app/"></iframe>
             <div>
               <h3>Portfolio Mako</h3>
-              <p>Mi portfolio personal tech.</p>
+              <p>Portfolio personal orientado a mostrar habilidades técnicas.</p>
               <a href="https://portfolio-mako-opal.vercel.app/" target="_blank">Ver en vivo</a>
               <div class="extra-info">
-                Creado con React y Tailwind CSS. Presenta mis proyectos, habilidades y contacto de manera interactiva.
+                Creado con React y Tailwind CSS. Presenta proyectos y competencias de manera profesional y clara.
               </div>
             </div>
           </div>
@@ -261,28 +152,26 @@
       <section id="competencias">
         <h2>Competencias</h2>
         <ul>
-          <li>Resolución de problemas</li>
-          <li>Trabajo en equipo</li>
-          <li>Aprendizaje rápido</li>
-          <li>Responsabilidad</li>
+          <li>Resolución de problemas en entornos profesionales</li>
+          <li>Trabajo en equipo y colaboración multidisciplinaria</li>
+          <li>Aprendizaje rápido de nuevas tecnologías</li>
+          <li>Responsabilidad, organización y atención al detalle</li>
         </ul>
       </section>
 
       <footer>
-        <p>Portfolio web · 2026 · Diseño personal</p>
+        <p>Portfolio web · 2026 · Redacción profesional orientada a empresas</p>
       </footer>
     </main>
   </div>
 
   <script>
-    // Mostrar secciones con animación al scroll
     const sections = document.querySelectorAll('section');
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('visible'); });
     }, { threshold: 0.2 });
     sections.forEach(sec => observer.observe(sec));
 
-    // Configuración de partículas JS
     particlesJS("particles-js", {
       "particles": {
         "number": {"value": 80, "density": {"enable": true,"value_area": 800}},
