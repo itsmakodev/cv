@@ -4,136 +4,100 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Marcos Velázquez | CV</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #0f172a;
-      --card: #020617;
+      --card: rgba(2,6,23,0.9);
       --primary: #38bdf8;
+      --accent: #f472b6;
       --text: #e5e7eb;
       --muted: #94a3b8;
     }
 
-    * {
-      box-sizing: border-box;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
-    }
+    * { box-sizing: border-box; margin:0; padding:0; font-family: 'Inter', system-ui, sans-serif; }
+    body { background: linear-gradient(120deg, #020617, var(--bg)); color: var(--text); line-height: 1.6; }
 
-    body {
-      margin: 0;
-      background: linear-gradient(120deg, #020617, #0f172a);
-      color: var(--text);
-      line-height: 1.6;
-    }
+    .container { max-width: 1000px; margin: auto; padding: 2rem 1.5rem; }
 
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 2rem 1.5rem;
-    }
+    /* HEADER */
+    header { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; margin-bottom: 3rem; text-align: center; }
+    header img { width: 120px; height: 120px; border-radius: 50%; border: 3px solid var(--primary); object-fit: cover; margin-bottom: 0.5rem; }
+    h1 { font-size: 3rem; background: linear-gradient(90deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .tagline { font-size: 1.1rem; color: var(--text); }
+    header p { color: var(--muted); margin: 0.2rem 0; }
 
-    header {
-      display: grid;
-      gap: 1rem;
-      margin-bottom: 3rem;
-    }
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
-    h1 {
-      font-size: 2.8rem;
-      margin: 0;
-    }
-
-    h2 {
-      color: var(--primary);
-      font-size: 1.6rem;
-      margin-bottom: 0.5rem;
-    }
-
-    p {
-      margin: 0.3rem 0;
-      color: var(--muted);
-    }
-
-    .tagline {
-      font-size: 1.1rem;
-      color: var(--text);
-    }
-
+    /* SECCIONES */
     section {
-      background: rgba(2, 6, 23, 0.85);
-      border-radius: 16px;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+      background: var(--card);
+      border-radius: 20px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+      transition: transform 0.3s, box-shadow 0.3s;
     }
+    section:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,0.5); }
 
-    ul {
-      padding-left: 1.2rem;
-    }
+    h2 { color: var(--primary); font-size: 1.5rem; margin-bottom: 0.8rem; border-bottom: 2px solid var(--accent); display: inline-block; padding-bottom: 0.2rem; }
 
-    li {
-      margin-bottom: 0.5rem;
-    }
+    p { margin: 0.5rem 0; color: var(--muted); }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
-    }
+    ul { padding-left: 1.2rem; margin-top: 0.5rem; }
+    li { margin-bottom: 0.5rem; }
 
+    /* GRID HABILIDADES */
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
     .badge {
       display: inline-block;
       background: rgba(56,189,248,0.15);
       color: var(--primary);
-      padding: 0.3rem 0.7rem;
+      padding: 0.4rem 0.8rem;
       border-radius: 999px;
       font-size: 0.85rem;
       margin: 0.2rem;
+      transition: transform 0.2s, background 0.2s;
+      cursor: default;
     }
+    .badge:hover { transform: scale(1.1); background: rgba(56,189,248,0.3); }
 
+    /* FOOTER */
     footer {
       text-align: center;
       color: var(--muted);
       margin-top: 3rem;
       font-size: 0.9rem;
-    }
-
-    a {
-      color: var(--primary);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
+      padding: 1rem;
+      border-top: 1px solid rgba(56,189,248,0.2);
     }
   </style>
 </head>
 <body>
   <div class="container">
     <header>
+      <!-- Descomenta la línea de la foto si quieres usar una -->
+      <!-- <img src="tu-foto.jpg" alt="Marcos Velázquez"> -->
       <h1>Marcos Velázquez Carmona</h1>
       <p class="tagline">Estudiante de Ingeniería Informática en Sistemas de Información · Perfil Junior</p>
-      <p>📍 Sevilla, España · 📞 +34 674 837 401 · ✉️ marcos.velazquez.dev@gmail.com</p>
-      <p>🌐 GitHub: <a href="#">github.com/tuusuario</a></p>
+      <p>📍 Sevilla, España · 📞 +34 674 837 401 · ✉️ itsmakodev@gmail.com</p>
+      <p>🌐 GitHub: <a href="#">github.com/itsmakodev</a></p>
     </header>
 
     <section>
       <h2>Perfil</h2>
-      <p>
-        Estudiante de Ingeniería Informática en Sistemas de Información con base sólida en programación y
-        pensamiento algorítmico. Interesado en desarrollo de software, sistemas de información y backend.
-        Motivado por aprender en entornos reales y aportar valor desde el primer día.
-      </p>
+      <p>Apasionado por la informática y el desarrollo de software. Me gusta aprender rápido, resolver problemas y crear soluciones prácticas que aporten valor desde el primer día.</p>
     </section>
 
     <section>
       <h2>Formación</h2>
-      <p><strong>Ingeniería Informática en Sistemas de Información</strong></p>
-      <p>Universidad Pablo de Olavide (UPO) · 2024 – Actualidad</p>
+      <p><strong>Ingeniería Informática en Sistemas de Información</strong> · Universidad Pablo de Olavide (UPO) · 2024 – Actualidad</p>
       <ul>
         <li>Programación en Java, C y Python</li>
         <li>Estructuras de control, tipos de datos y algoritmos</li>
         <li>Lógica matemática y matemática discreta aplicada</li>
-        <li>Bases de arquitectura de computadores y sistemas digitales</li>
+        <li>Arquitectura de computadores y sistemas digitales</li>
       </ul>
     </section>
 
@@ -142,7 +106,7 @@
       <ul>
         <li><strong>Mini sistema en Java</strong> – Aplicación de consola con gestión de datos, validaciones y lógica modular.</li>
         <li><strong>Prácticas en C</strong> – Resolución de problemas algorítmicos usando estructuras básicas.</li>
-        <li><strong>Ejercicios en Python</strong> – Scripts para automatización y lógica computacional.</li>
+        <li><strong>Scripts en Python</strong> – Automatización de tareas y resolución de ejercicios de lógica.</li>
       </ul>
     </section>
 
