@@ -137,13 +137,18 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(56,189,248,0.15);
-  color: var(--text);
+  background: #00ffff; /* Cian sólido y completamente opaco */
+  color: #0f172a; /* Color de texto oscuro para buen contraste */
   padding: 0.8rem 1rem;
   opacity: 0;
   transform: translateY(100%);
   transition: all 0.3s;
   font-size: 0.85rem;
+}
+
+.project-card:hover .extra-info {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .project-card:hover .extra-info {
