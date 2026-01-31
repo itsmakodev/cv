@@ -181,6 +181,93 @@ footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0
 .lang-switch img { width:32px; height:32px; cursor:pointer; border-radius:50%; border:2px solid var(--primary); transition:0.3s; }
 .lang-switch img:hover { transform: scale(1.1); box-shadow:0 0 10px var(--primary); }
 
+.github-preview {
+  margin: 4rem 0;
+}
+
+.github-preview h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #00ffff;
+}
+
+.github-card {
+  background: rgba(0, 20, 30, 0.85);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+}
+
+.github-header {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.github-header img {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  border: 2px solid cyan;
+}
+
+.github-header h3 {
+  margin: 0;
+}
+
+.github-header a {
+  color: cyan;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.github-stats {
+  display: flex;
+  gap: 2rem;
+  margin: 1.5rem 0;
+}
+
+.github-stats div {
+  text-align: center;
+}
+
+.github-stats strong {
+  font-size: 1.4rem;
+  display: block;
+  color: #ffffff;
+}
+
+.repo-list {
+  list-style: none;
+  padding: 0;
+}
+
+.repo-list li {
+  margin: 0.7rem 0;
+  padding: 0.8rem;
+  border-radius: 8px;
+  background: rgba(0, 255, 255, 0.08);
+  transition: all 0.3s ease;
+}
+
+.repo-list li:hover {
+  background: rgba(0, 255, 255, 0.18);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+}
+
+.repo-list a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.repo-meta {
+  font-size: 0.85rem;
+  color: #9ff;
+}
+
 @media(max-width:900px){ .container{flex-direction:column;} nav{margin-right:0;margin-bottom:2rem;width:100%;display:flex;justify-content:space-around;border-radius:15px;} }
 </style>
 </head>
@@ -246,51 +333,34 @@ footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0
         <li data-es="Sistemas digitales y arquitectura de computadores" data-en="Digital systems and computer architecture">Sistemas digitales y arquitectura de computadores</li>
       </ul>
     </section>
-    <script>
-      const GITHUB_USER = "itsmakodev";
-      
-      async function loadGitHubPreview() {
-        try {
-          const userRes = await fetch(`https://api.github.com/users/${GITHUB_USER}`);
-          const user = await userRes.json();
-      
-          document.getElementById("gh-avatar").src = user.avatar_url;
-          document.getElementById("gh-name").textContent = user.name || user.login;
-          document.getElementById("gh-bio").textContent = user.bio || "Software Developer";
-          document.getElementById("gh-profile").href = user.html_url;
-          document.getElementById("gh-repos").textContent = user.public_repos;
-          document.getElementById("gh-followers").textContent = user.followers;
-          document.getElementById("gh-following").textContent = user.following;
-      
-          const repoRes = await fetch(
-            `https://api.github.com/users/${GITHUB_USER}/repos?sort=updated&per_page=5`
-          );
-          const repos = await repoRes.json();
-      
-          const repoList = document.getElementById("gh-repo-list");
-          repoList.innerHTML = "";
-      
-          repos.forEach(repo => {
-            const li = document.createElement("li");
-            li.innerHTML = `
-              <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer">
-                ${repo.name}
-              </a>
-              <div class="repo-meta">
-                ⭐ ${repo.stargazers_count} · 🍴 ${repo.forks_count}
-                ${repo.language ? ` · ${repo.language}` : ""}
-              </div>
-            `;
-            repoList.appendChild(li);
-          });
-        } catch (err) {
-          console.error("GitHub API error:", err);
-        }
-      }
-      
-      loadGitHubPreview();
-      </script>
-      
+
+    <section id="github-preview" class="github-preview">
+      <h2>&lt; GitHub Preview /&gt;</h2>
+    
+      <div class="github-card">
+        <div class="github-header">
+          <img id="gh-avatar" alt="GitHub avatar">
+          <div>
+            <h3 id="gh-name"></h3>
+            <p id="gh-bio"></p>
+            <a id="gh-profile" target="_blank" rel="noopener noreferrer">
+              Ver perfil en GitHub →
+            </a>
+          </div>
+        </div>
+    
+        <div class="github-stats">
+          <div><strong id="gh-repos"></strong><span>Repos</span></div>
+          <div><strong id="gh-followers"></strong><span>Followers</span></div>
+          <div><strong id="gh-following"></strong><span>Following</span></div>
+        </div>
+    
+        <h4>Últimos repositorios</h4>
+        <ul id="gh-repo-list" class="repo-list"></ul>
+      </div>
+    </section>
+
+    
     <!-- PROYECTOS -->
     <section id="proyectos">
       <h2 data-es="Proyectos Destacados" data-en="Highlighted Projects">Proyectos Destacados</h2>
@@ -448,5 +518,49 @@ document.querySelectorAll('.console-placeholder').forEach(el=>{
   el.closest('.project-card').addEventListener('mouseenter', typeConsole);
 });
 </script>
+<script>
+  const GITHUB_USER = "itsmakodev";
+  
+  async function loadGitHubPreview() {
+    try {
+      const userRes = await fetch(`https://api.github.com/users/${GITHUB_USER}`);
+      const user = await userRes.json();
+  
+      document.getElementById("gh-avatar").src = user.avatar_url;
+      document.getElementById("gh-name").textContent = user.name || user.login;
+      document.getElementById("gh-bio").textContent = user.bio || "Software Developer";
+      document.getElementById("gh-profile").href = user.html_url;
+      document.getElementById("gh-repos").textContent = user.public_repos;
+      document.getElementById("gh-followers").textContent = user.followers;
+      document.getElementById("gh-following").textContent = user.following;
+  
+      const repoRes = await fetch(
+        `https://api.github.com/users/${GITHUB_USER}/repos?sort=updated&per_page=5`
+      );
+      const repos = await repoRes.json();
+  
+      const repoList = document.getElementById("gh-repo-list");
+      repoList.innerHTML = "";
+  
+      repos.forEach(repo => {
+        const li = document.createElement("li");
+        li.innerHTML = `
+          <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer">
+            ${repo.name}
+          </a>
+          <div class="repo-meta">
+            ⭐ ${repo.stargazers_count} · 🍴 ${repo.forks_count}
+            ${repo.language ? ` · ${repo.language}` : ""}
+          </div>
+        `;
+        repoList.appendChild(li);
+      });
+    } catch (err) {
+      console.error("GitHub API error:", err);
+    }
+  }
+  
+  loadGitHubPreview();
+  </script>  
 </body>
 </html>
