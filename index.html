@@ -524,20 +524,25 @@ footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0
         <li data-es="Resolución de problemas y pensamiento lógico" data-en="Problem solving and logical thinking">Resolución de problemas y pensamiento lógico</li>
       </ul>
     </section>
-    <div class="cv-actions">
-      <a href="CVMarcosV.pdf"
-         class="cv-button"
-         data-es="📄 Descargar CV (PDF)"
-         data-en="📄 Download CV (PDF)"
-      </a>
-    
-      <a href="https://itsmakodev.github.io/cv"
-         class="cv-button secondary"
-         data-es="🌐 Ver CV online"
-         data-en="🌐 View CV online"
-      </a>
-    </div>
-    
+    <!-- Botones de CV con idioma -->
+<div class="cv-actions">
+  <!-- Español -->
+  <a href="CVMarcosV.pdf" download class="cv-button lang-es">
+    📄 Descargar CV (PDF)
+  </a>
+  <a href="https://itsmakodev.github.io/cv" class="cv-button secondary lang-es">
+    🌐 Ver CV online
+  </a>
+
+  <!-- Inglés -->
+  <a href="CVMarcosV.pdf" download class="cv-button lang-en" style="display:none;">
+    📄 Download CV (PDF)
+  </a>
+  <a href="https://itsmakodev.github.io/cv" class="cv-button secondary lang-en" style="display:none;">
+    🌐 View CV online
+  </a>
+</div>
+
     <footer>
       <p data-es="© 2026 itsmako. Todos los derechos reservados." data-en="© 2026 itsmako. All rights reserved.">© 2026 itsmako. Todos los derechos reservados.</p>
     </footer>
@@ -622,6 +627,26 @@ document.querySelectorAll('.console-placeholder').forEach(el=>{
   }
   
   loadGitHubPreview();
-  </script>  
+  </script>
+
+<script>
+function switchLanguage(lang) {
+  const esElements = document.querySelectorAll('.lang-es');
+  const enElements = document.querySelectorAll('.lang-en');
+
+  if(lang === 'es') {
+    esElements.forEach(el => el.style.display = 'inline-block');
+    enElements.forEach(el => el.style.display = 'none');
+  } else if(lang === 'en') {
+    enElements.forEach(el => el.style.display = 'inline-block');
+    esElements.forEach(el => el.style.display = 'none');
+  }
+}
+
+// Ejemplo: conectar a botones de idioma
+document.getElementById('btn-es').addEventListener('click', () => switchLanguage('es'));
+document.getElementById('btn-en').addEventListener('click', () => switchLanguage('en'));
+
+</script>
 </body>
 </html>
