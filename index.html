@@ -246,7 +246,51 @@ footer { text-align: center; color: var(--muted); margin-top: 3rem; font-size: 0
         <li data-es="Sistemas digitales y arquitectura de computadores" data-en="Digital systems and computer architecture">Sistemas digitales y arquitectura de computadores</li>
       </ul>
     </section>
-
+    <script>
+      const GITHUB_USER = "itsmakodev";
+      
+      async function loadGitHubPreview() {
+        try {
+          const userRes = await fetch(`https://api.github.com/users/${GITHUB_USER}`);
+          const user = await userRes.json();
+      
+          document.getElementById("gh-avatar").src = user.avatar_url;
+          document.getElementById("gh-name").textContent = user.name || user.login;
+          document.getElementById("gh-bio").textContent = user.bio || "Software Developer";
+          document.getElementById("gh-profile").href = user.html_url;
+          document.getElementById("gh-repos").textContent = user.public_repos;
+          document.getElementById("gh-followers").textContent = user.followers;
+          document.getElementById("gh-following").textContent = user.following;
+      
+          const repoRes = await fetch(
+            `https://api.github.com/users/${GITHUB_USER}/repos?sort=updated&per_page=5`
+          );
+          const repos = await repoRes.json();
+      
+          const repoList = document.getElementById("gh-repo-list");
+          repoList.innerHTML = "";
+      
+          repos.forEach(repo => {
+            const li = document.createElement("li");
+            li.innerHTML = `
+              <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer">
+                ${repo.name}
+              </a>
+              <div class="repo-meta">
+                ⭐ ${repo.stargazers_count} · 🍴 ${repo.forks_count}
+                ${repo.language ? ` · ${repo.language}` : ""}
+              </div>
+            `;
+            repoList.appendChild(li);
+          });
+        } catch (err) {
+          console.error("GitHub API error:", err);
+        }
+      }
+      
+      loadGitHubPreview();
+      </script>
+      
     <!-- PROYECTOS -->
     <section id="proyectos">
       <h2 data-es="Proyectos Destacados" data-en="Highlighted Projects">Proyectos Destacados</h2>
