@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">Mako</title>
+  <desc id="desc">Vista gráfica de una aplicación web TypeScript.</desc>
+  <rect width="960" height="540" fill="#0b1020"/>
+  <path d="M0 96h960M0 210h960M0 324h960M0 438h960M160 0v540M320 0v540M480 0v540M640 0v540M800 0v540" stroke="#1f2937" stroke-width="2"/>
+  <rect x="84" y="76" width="792" height="388" rx="16" fill="#111827" stroke="#334155" stroke-width="2"/>
+  <rect x="116" y="110" width="180" height="32" rx="8" fill="#2dd4bf"/>
+  <rect x="116" y="178" width="360" height="28" rx="8" fill="#334155"/>
+  <rect x="116" y="226" width="282" height="22" rx="8" fill="#475569"/>
+  <rect x="116" y="288" width="164" height="58" rx="8" fill="#2563eb"/>
+  <rect x="300" y="288" width="164" height="58" rx="8" fill="#8b5cf6"/>
+  <rect x="544" y="150" width="256" height="222" rx="12" fill="#0f172a" stroke="#2dd4bf" stroke-width="2"/>
+  <path d="M580 326l54-86 45 58 36-42 48 70" fill="none" stroke="#2dd4bf" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="116" y="418" fill="#f8fafc" font-family="Inter, Arial, sans-serif" font-size="48" font-weight="900">Mako</text>
+  <text x="116" y="454" fill="#94a3b8" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700">TypeScript · React · TanStack</text>
+</svg>

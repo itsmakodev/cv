@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+  <title id="title">Marca personal de Marcos Velázquez Carmona</title>
+  <desc id="desc">Inicial M sobre un panel técnico limpio.</desc>
+  <rect width="240" height="240" rx="24" fill="#0b1020"/>
+  <path d="M32 52h176v136H32z" fill="#111827" stroke="#334155" stroke-width="2"/>
+  <path d="M52 76h136M52 102h84M52 128h112M52 154h70" stroke="#475569" stroke-width="6" stroke-linecap="round"/>
+  <path d="M67 184V66h23l30 49 30-49h23v118h-23v-74l-22 36h-16l-22-36v74z" fill="#2dd4bf"/>
+  <path d="M32 52h176" stroke="#2dd4bf" stroke-width="3"/>
+</svg>

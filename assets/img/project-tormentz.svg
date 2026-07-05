@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">Tormentzita</title>
+  <desc id="desc">Vista gráfica de un portfolio creativo.</desc>
+  <rect width="960" height="540" fill="#111827"/>
+  <rect x="76" y="70" width="808" height="400" rx="18" fill="#0b1020" stroke="#334155" stroke-width="2"/>
+  <rect x="120" y="118" width="240" height="282" rx="12" fill="#161f32"/>
+  <rect x="390" y="118" width="344" height="48" rx="8" fill="#f43f5e"/>
+  <rect x="390" y="198" width="272" height="28" rx="8" fill="#475569"/>
+  <rect x="390" y="246" width="404" height="28" rx="8" fill="#334155"/>
+  <rect x="390" y="314" width="122" height="54" rx="8" fill="#2dd4bf"/>
+  <rect x="532" y="314" width="122" height="54" rx="8" fill="#2563eb"/>
+  <path d="M158 348c46-126 96-126 150 0" fill="none" stroke="#f43f5e" stroke-width="18" stroke-linecap="round"/>
+  <circle cx="230" cy="228" r="58" fill="#2dd4bf"/>
+  <text x="120" y="448" fill="#f8fafc" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="900">Tormentzita</text>
+  <text x="390" y="410" fill="#94a3b8" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700">Portfolio visual · TypeScript</text>
+</svg>

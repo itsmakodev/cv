@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">Trabajo Algorítmica</title>
+  <desc id="desc">Vista gráfica de un proyecto Java de algoritmos.</desc>
+  <rect width="960" height="540" fill="#0b1020"/>
+  <rect x="94" y="72" width="772" height="396" rx="16" fill="#111827" stroke="#334155" stroke-width="2"/>
+  <circle cx="144" cy="124" r="12" fill="#ef4444"/>
+  <circle cx="184" cy="124" r="12" fill="#f59e0b"/>
+  <circle cx="224" cy="124" r="12" fill="#22c55e"/>
+  <path d="M164 226h164M164 286h164M164 346h164M328 226l80 60-80 60M520 210h190M520 270h250M520 330h142" stroke="#94a3b8" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="480" y="186" width="322" height="192" rx="12" fill="#0f172a" stroke="#f97316" stroke-width="3"/>
+  <text x="150" y="424" fill="#f8fafc" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="900">Java</text>
+  <text x="260" y="424" fill="#f97316" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="900">Algoritmos</text>
+</svg>
